@@ -1,8 +1,9 @@
 <div class="content mt-2" role="main">
     <h2 class="text-center">CRUD</h2>
     <div class="container">
-        <button class="btn btn-info"><strong>Listar</strong></button>
-        <button class="btn btn-info" style="margin-left: 10px;"><strong>Nuevo</strong></button>
+        <button (click)="Listar()" class="btn btn-info"><strong>Listar</strong></button>
+        <button (click)="Nuevo()" class="btn btn-info" style="margin-left: 10px;"><strong>Nuevo</strong></button>
     </div>
 </div>
+<hr>
 <router-outlet></router-outlet>
