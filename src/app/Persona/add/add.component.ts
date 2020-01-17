@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddComponent implements OnInit {
 
+  personaForm = new FormGroup({
+    nombre: new FormControl('', Validators.compose([Validators.minLength(5), Validators.required, Validators.pattern('[a-zA-Z ]*')])),
+    apellidos:  new FormControl('', Validators.compose([Validators.minLength(5), Validators.required, Validators.pattern('[a-zA-Z ]*')])),
+  });
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  crear(){
+    console.warn(this.personaForm.value);
+  }
 }
+
+

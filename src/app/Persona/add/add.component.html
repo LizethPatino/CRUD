@@ -1,1 +1,28 @@
-<p>add works!</p>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto border mt-3">
+            <h4 class="text-center mt-4">CREAR PERSONA</h4>
+            <form [formGroup]="personaForm" (ngSubmit)="crear()">
+                <div class="form-row p-4">
+                    <div class="form-group col-md-12">
+                        <label for="inputNombre"><b>Nombre</b></label>
+                        <input type="text" class="form-control" id="inputNombre" formControlName="nombre">
+                        <div>{{personaForm.get('nombre').errors | json}}</div>
+                        <!--<div *ngIf="nombre.errors.required">es requerido</div>-->
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputApellidos"><b>Apellido</b></label>
+                        <input type="text" class="form-control" id="inputApellidos" formControlName="apellidos">
+                    </div>
+                    <button type="submit" class="btn btn-primary col-md-12 mb-3 mt-2" [disabled]="!personaForm.valid"><b>Crear</b></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <p>
+        Form Status: {{ personaForm.status }}
+    </p>
+
+    <p>
+        Form Value: {{ personaForm.value | json}}
+    </p>
