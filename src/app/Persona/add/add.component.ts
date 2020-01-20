@@ -9,8 +9,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class AddComponent implements OnInit {
 
   personaForm = new FormGroup({
-    nombre: new FormControl('', Validators.compose([Validators.minLength(5), Validators.required, Validators.pattern('[a-zA-Z ]*')])),
-    apellidos:  new FormControl('', Validators.compose([Validators.minLength(5), Validators.required, Validators.pattern('[a-zA-Z ]*')])),
+    nombre: new FormControl('', Validators.compose([Validators.minLength(5), Validators.required, Validators.pattern('[a-zA-Z ]*'),Validators.maxLength(10)])),
+    apellidos:  new FormControl('', Validators.compose([Validators.minLength(5), Validators.required, Validators.pattern('[a-zA-Z ]*'), Validators.maxLength(10)])),
   });
 
   constructor() { }
@@ -20,6 +20,14 @@ export class AddComponent implements OnInit {
 
   crear(){
     console.warn(this.personaForm.value);
+  }
+
+  get nombre(){
+    return this.personaForm.get('nombre');
+  }
+
+  get apellidos(){
+    return this.personaForm.get('apellidos');
   }
 }
 
