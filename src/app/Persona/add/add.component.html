@@ -34,7 +34,7 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary col-md-12 mb-3 mt-2" [disabled]="!personaForm.valid"><b>Crear</b></button>
+                    <button type="submit" class="btn btn-primary col-md-12 mb-3 mt-2" [class.botonDisabled]="!personaForm.valid" [disabled]="!personaForm.valid"><b>Crear</b></button>
                 </div>
             </form>
         </div>
