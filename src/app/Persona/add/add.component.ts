@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ServiceService } from 'src/app/Service/service.service';
 
 @Component({
   selector: 'app-add',
@@ -13,13 +14,14 @@ export class AddComponent implements OnInit {
     apellidos:  new FormControl('', Validators.compose([Validators.minLength(5), Validators.required, Validators.pattern('[a-zA-Z ]*'), Validators.maxLength(10)])),
   });
 
-  constructor() { }
+  constructor( private service:ServiceService) { }
 
   ngOnInit() {
   }
 
-  crear(){
+  crearPersona(){
     console.warn(this.personaForm.value);
+    this.service.addPersona(this.personaForm.value).subscribe(data=> console.log("Se envio correctamente"));
   }
 
   get nombre(){
