@@ -20,8 +20,8 @@
                         <td>{{persona.nombre}}</td>
                         <td>{{persona.apellidos}}</td>
                         <td>
-                            <button class="btn btn-warning"><b>Editar</b></button>
-                            <button class="btn btn-danger" style="margin-left: 10px;"><b>Eliminar</b></button>
+                            <button class="btn btn-info"><b>Editar</b></button>
+                            <button class="btn btn-danger" style="margin-left: 10px;" (click)="eliminarPersona(persona)"><b>Eliminar</b></button>
                         </td>
                     </tr>
                 </tbody>

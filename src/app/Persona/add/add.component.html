@@ -7,7 +7,7 @@
                     <div class="form-group col-md-12">
                         <label for="inputNombre"><b>Nombre</b></label>
                         <input type="text" class="form-control" id="inputNombre" formControlName="nombre">
-                        <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="alert alert-danger">
+                        <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="text-danger">
                             <div *ngIf="nombre.errors.pattern">
                                 Nombre no debe contener números.
                             </div>
@@ -25,7 +25,7 @@
                     <div class="form-group col-md-12">
                         <label for="inputApellidos"><b>Apellido</b></label>
                         <input type="text" class="form-control" id="inputApellidos" formControlName="apellidos">
-                        <div *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched)" class="alert alert-danger">
+                        <div *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched)" class="text-danger">
                             <div *ngIf="apellidos.errors.pattern">
                                 Apellido no debe contener números.
                             </div>

@@ -21,7 +21,7 @@ export class AddComponent implements OnInit {
 
   crearPersona(){
     console.warn(this.personaForm.value);
-    this.service.addPersona(this.personaForm.value).subscribe(data=> console.log("Se envio correctamente"));
+    this.service.addPersona(this.personaForm.value).subscribe(data=> console.log("Se ha enviado correctamente"));
   }
 
   get nombre(){

@@ -19,4 +19,8 @@ export class ServiceService {
   addPersona(persona: Persona):Observable<Persona>{
     return this.http.post<Persona>(this.Url, persona);
   }
+
+  deletePersona(persona:Persona){
+    return this.http.delete<Persona>(this.Url+"/"+persona.id_persona);
+  }
 }

@@ -16,4 +16,11 @@ export class ListarComponent implements OnInit {
   ngOnInit() {
     this.service.getPersonas().subscribe(data=> this.personas =data);
   }
+
+  eliminarPersona(persona:Persona){
+   this.service.deletePersona(persona).subscribe(data=> {this.personas=this.personas.filter(p=>p!==persona)});
+    //console.log(this.personas.filter(p=>p==persona));
+    //this.service.deletePersona(persona).subscribe(data=> {this.personas=this.personas.filter(p=>p.id_persona==5)});
+  }
+
 }
