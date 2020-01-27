@@ -34,9 +34,6 @@ export class EditComponent implements OnInit {
   })
  }
 
- 
-
-
   editarPersona(){
     this.datoUsuario.nombre = this.nombre.value;
     this.datoUsuario.apellidos = this.apellidos.value;
