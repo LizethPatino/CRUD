@@ -16,11 +16,19 @@ export class ServiceService {
     return this.http.get<Persona[]>(this.Url);
   }
 
+  getPersonaId(id:number){
+    return this.http.get<Persona>(this.Url+"/"+id);
+  }
+
   addPersona(persona: Persona):Observable<Persona>{
     return this.http.post<Persona>(this.Url, persona);
   }
 
   deletePersona(persona:Persona){
     return this.http.delete<Persona>(this.Url+"/"+persona.id_persona);
+  }
+
+  editPersona(persona:Persona){
+    return this.http.put<Persona>(this.Url+"/"+persona.id_persona,persona);
   }
 }
