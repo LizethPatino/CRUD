@@ -1,0 +1,24 @@
+.centroScreen {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card {
+    width: 12rem;
+    margin-top: 3em;
+    margin-left: 2em;
+    -webkit-box-shadow: 6px 6px 6px -6px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 6px 6px 6px -6px rgba(0, 0, 0, 0.55);
+    box-shadow: 6px 6px 6px -6px rgba(0, 0, 0, 0.55);
+}
+
+@media (min-width: 324px)and (max-width: 767px) {
+    .card {
+        position: relative;
+        left: 3.2em;
+    }
+}

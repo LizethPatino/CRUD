@@ -1,0 +1,43 @@
+<div class="container centroScreen">
+    <div class="row d-flex justify-content-center ">
+        <div class="card col-md-12 border mt-3">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <div class="card-body mt-3">
+                    <div class="form-row p-1">
+                        <div class="form-group col-md-12">
+                            <input type="text" class="form-control" id="usuario" placeholder="usuario" formControlName="usuario">
+                            <div *ngIf="usuario.invalid && (usuario.dirty || usuario.touched)" class="text-danger">
+                                <div *ngIf="usuario.errors.pattern">
+                                    usuario no debe contener números.
+                                </div>
+                                <div *ngIf="usuario.errors.required">
+                                    usuario es requerido.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row p-1">
+                        <div class="form-group col-md-12">
+                            <input type="password" class="form-control" id="password" placeholder="password" formControlName="contrasena">
+                            <div *ngIf="contrasena.invalid && (contrasena.dirty || contrasena.touched)" class="text-danger">
+                                <div *ngIf="contrasena.errors.required">
+                                    contrasena es requerido.
+                                </div>
+                                <div *ngIf="contrasena.errors.minlength">
+                                    contrasena debe tener al menos 4 caracteres.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn btn-success col-md-12 mb-3 mt-2" [disabled]="!loginForm.valid">INGRESAR</button>
+                    </div>
+                    <div class="d-flex bd-highlight d-flex justify-content-center">
+                        <p class="card-text p-2 bd-highlight">No estas registrado?</p>
+                        <a href="#" class="card-link p-2 bd-highlight">Registrate</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
